@@ -97,7 +97,18 @@ class ContaTest {
     //    - Depósito com valor negativo lança IllegalArgumentException
     //    - Depósito em conta inativa lança IllegalStateException
     // =======================================================
+    @Test
+    void depositocomvalorvalido(String titular, double saldo){
+        // arrange
+    Conta conta = new Conta("Luis",100);
 
+        // act
+    conta.depositar(50.0);
+
+        // assert
+    assertEquals(150.0, conta.getSaldo());
+    }
+}
 
     // =======================================================
     //  Testes para sacar
@@ -130,4 +141,4 @@ class ContaTest {
     //    - Conta encerrada tem isAtiva() == false
     // =======================================================
 
-}
+
