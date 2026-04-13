@@ -1,0 +1,87 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< contabancaria:tdd-junit >-----------------------
+[INFO] Building TDD com JUnit 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ tdd-junit ---
+[INFO] skip non existing resourceDirectory /workspaces/03-TesteUnitarioJavaLuizerx/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.12.1:compile (default-compile) @ tdd-junit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ tdd-junit ---
+[INFO] skip non existing resourceDirectory /workspaces/03-TesteUnitarioJavaLuizerx/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.12.1:testCompile (default-testCompile) @ tdd-junit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ tdd-junit ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running contabancaria.ContaTest
+[ERROR] Tests run: 26, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.297 s <<< FAILURE! -- in contabancaria.ContaTest
+[ERROR] contabancaria.ContaTest.deposito_ContaInativa_LancaIllegalStateException -- Time elapsed: 0.011 s <<< ERROR!
+java.lang.IllegalStateException: Conta com saldo não pode ser encerrada.
+	at contabancaria.Conta.encerrar(Conta.java:91)
+	at contabancaria.ContaTest.deposito_ContaInativa_LancaIllegalStateException(ContaTest.java:130)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] contabancaria.ContaTest.transferencia_ContaDestinoInativa_LancaIllegalStateException -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: Conta com saldo não pode ser encerrada.
+	at contabancaria.Conta.encerrar(Conta.java:91)
+	at contabancaria.ContaTest.transferencia_ContaDestinoInativa_LancaIllegalStateException(ContaTest.java:243)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] contabancaria.ContaTest.transferencia_ContaOrigemInativa_LancaIllegalStateException -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.IllegalStateException: Conta com saldo não pode ser encerrada.
+	at contabancaria.Conta.encerrar(Conta.java:91)
+	at contabancaria.ContaTest.transferencia_ContaOrigemInativa_LancaIllegalStateException(ContaTest.java:233)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] contabancaria.ContaTest.saque_ContaInativa_LancaIllegalStateException -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalStateException: Conta com saldo não pode ser encerrada.
+	at contabancaria.Conta.encerrar(Conta.java:91)
+	at contabancaria.ContaTest.saque_ContaInativa_LancaIllegalStateException(ContaTest.java:178)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   ContaTest.deposito_ContaInativa_LancaIllegalStateException:130 » IllegalState Conta com saldo não pode ser encerrada.
+[ERROR]   ContaTest.saque_ContaInativa_LancaIllegalStateException:178 » IllegalState Conta com saldo não pode ser encerrada.
+[ERROR]   ContaTest.transferencia_ContaDestinoInativa_LancaIllegalStateException:243 » IllegalState Conta com saldo não pode ser encerrada.
+[ERROR]   ContaTest.transferencia_ContaOrigemInativa_LancaIllegalStateException:233 » IllegalState Conta com saldo não pode ser encerrada.
+[INFO] 
+[ERROR] Tests run: 26, Failures: 0, Errors: 4, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.379 s
+[INFO] Finished at: 2026-04-13T02:50:01Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project tdd-junit: 
+[ERROR] 
+[ERROR] Please refer to /workspaces/03-TesteUnitarioJavaLuizerx/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
